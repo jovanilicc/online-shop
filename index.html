@@ -18,39 +18,29 @@
             <th>Cena($)</th>
           </tr>
         </thead>
-        <tbody class="table-data">
-          <tr>
-            <td>1</td>
-            <td>Monitor</td>
-            <td>165</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>TV</td>
-            <td>650</td>
-          </tr>
-        </tbody>
+        <tbody class="table-data"></tbody>
       </table>
       <div class="form">
         <form action="#" method="GET">
           <div>
             <label for="naziv">Naziv:</label>
-            <input type="text" name="naziv" id="naziv" />
+            <input type="text" name="naziv" id="naziv" required />
           </div>
           <div>
             <label for="cena">Cena:</label>
-            <input type="text" name="cena" id="cena" />
+            <input type="number" name="cena" id="cena" required />
           </div>
           <div>
             <label for="opis">Opis:</label>
-            <input type="text" name="opis" id="opis" />
+            <textarea rows="1" name="opis" id="opis" required></textarea>
           </div>
           <div class="btn"><button>Dodaj</button></div>
         </form>
       </div>
     </section>
-    <div>
+    <div class="info">
       <p>Naziv:<br />Cena: <br />Opis:</p>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
