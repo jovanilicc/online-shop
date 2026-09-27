@@ -14,6 +14,16 @@ const mis = new Artikal("Mis", 20, "Logitech Gaming Mis, 12000DPI");
 
 const artikli = [monitor, tv, mis];
 
+const prikaziDetalje = (artikal) => {
+  let info = document.querySelector(".info");
+  info.innerHTML = "";
+  let p = document.createElement("p");
+  let detalji = `Naziv: ${artikal.naziv}<br/><br/>Cena: ${artikal.cena}$<br/><br/>Opis: ${artikal.opis}`;
+  p.innerHTML = detalji;
+
+  info.appendChild(p);
+};
+
 const inicijalizujTabelu = (artikli) => {
   let tabela = document.querySelector(".table-data");
   tabela.innerHTML = "";
@@ -32,6 +42,10 @@ const inicijalizujTabelu = (artikli) => {
     tr.appendChild(br);
     tr.appendChild(naziv);
     tr.appendChild(cena);
+
+    tr.addEventListener("click", (e) => {
+      prikaziDetalje(artikli[i]);
+    });
 
     tabela.appendChild(tr);
   }

@@ -10,6 +10,7 @@ section {
   font-weight: normal;
   background-color: whitesmoke;
   padding: 1rem;
+  border: 1px solid black;
 }
 .table {
   border-spacing: 0;
@@ -19,6 +20,7 @@ section {
 .table td {
   border: 1px solid black;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 form {
@@ -43,10 +45,13 @@ textarea {
 }
 
 .info {
-  border: 1px solid black;
-  padding: 1rem;
   margin-top: 2rem;
-  max-width: 250px;
+}
+.info p {
+  padding: 1rem;
+  margin: 0;
+  border: 1px solid black;
+  max-width: 350px;
 }
 
 /*# sourceMappingURL=styles.css.map */

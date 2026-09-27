@@ -8,6 +8,7 @@ section {
     font-weight: normal;
     background-color: whitesmoke;
     padding: 1rem;
+    border: 1px solid black;
   }
   border-spacing: 0;
   border: 1px solid black;
@@ -15,6 +16,7 @@ section {
   td {
     border: 1px solid black;
     padding: 0.5rem;
+    cursor: pointer;
   }
 }
 form {
@@ -37,8 +39,11 @@ textarea {
   border-bottom: 1px solid black;
 }
 .info {
-  border: 1px solid black;
-  padding: 1rem;
   margin-top: 2rem;
-  max-width: 250px;
+  p {
+    padding: 1rem;
+    margin: 0;
+    border: 1px solid black;
+    max-width: 350px;
+  }
 }
