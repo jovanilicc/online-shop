@@ -6,5 +6,51 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>Online shop</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Artikli</h1>
+    <hr />
+    <section>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Br</th>
+            <th>Naziv</th>
+            <th>Cena($)</th>
+          </tr>
+        </thead>
+        <tbody class="table-data">
+          <tr>
+            <td>1</td>
+            <td>Monitor</td>
+            <td>165</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>TV</td>
+            <td>650</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="form">
+        <form action="#" method="GET">
+          <div>
+            <label for="naziv">Naziv:</label>
+            <input type="text" name="naziv" id="naziv" />
+          </div>
+          <div>
+            <label for="cena">Cena:</label>
+            <input type="text" name="cena" id="cena" />
+          </div>
+          <div>
+            <label for="opis">Opis:</label>
+            <input type="text" name="opis" id="opis" />
+          </div>
+          <div class="btn"><button>Dodaj</button></div>
+        </form>
+      </div>
+    </section>
+    <div>
+      <p>Naziv:<br />Cena: <br />Opis:</p>
+    </div>
+  </body>
 </html>

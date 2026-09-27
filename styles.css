@@ -1,3 +1,40 @@
+section {
+  display: flex;
+  gap: 2rem;
+}
 
+.table {
+  text-align: center;
+}
+.table th {
+  font-weight: normal;
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+.table {
+  border-spacing: 0;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.table td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+form {
+  border: 1px solid black;
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+form input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+form .btn {
+  text-align: right;
+  padding: 0.5rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
