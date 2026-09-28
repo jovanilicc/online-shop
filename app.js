@@ -24,8 +24,31 @@ const prikaziDetalje = (artikal) => {
   info.appendChild(p);
 };
 
+const dodajNoviArtikal = (artikli) => {
+  let btn = document.querySelector(".btn");
+  btn.addEventListener("click", (e) => {
+    const forma = document.querySelector("form");
+    if (forma.checkValidity() === true) {
+      e.preventDefault();
+      const formData = new FormData(forma);
+
+      let naziv = formData.get("naziv");
+      let cena = parseInt(formData.get("cena"));
+      let opis = formData.get("opis");
+
+      const noviArtikal = new Artikal(naziv, cena, opis);
+
+      artikli.push(noviArtikal);
+      inicijalizujTabelu(artikli);
+      forma.reset();
+      e.stopPropagation();
+    }
+  });
+};
+
 const inicijalizujTabelu = (artikli) => {
   let tabela = document.querySelector(".table-data");
+
   tabela.innerHTML = "";
 
   for (let i = 0; i < artikli.length; i++) {
@@ -37,7 +60,6 @@ const inicijalizujTabelu = (artikli) => {
     br.textContent = i + 1;
     naziv.textContent = artikli[i].naziv;
     cena.textContent = artikli[i].cena;
-    console.log(cena.textContent);
 
     tr.appendChild(br);
     tr.appendChild(naziv);
@@ -52,5 +74,4 @@ const inicijalizujTabelu = (artikli) => {
 };
 
 inicijalizujTabelu(artikli);
-artikli.push(new Artikal("Test", 5, "Test"));
-inicijalizujTabelu(artikli);
+dodajNoviArtikal(artikli);
