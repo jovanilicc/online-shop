@@ -12,7 +12,12 @@ const monitor = new Artikal("Monitor", 165, "24' Monitor FULL HD, 120HZ");
 const tv = new Artikal("TV", 650, "OLED TV, FULL HD, SMART");
 const mis = new Artikal("Mis", 20, "Logitech Gaming Mis, 12000DPI");
 
-const artikli = [monitor, tv, mis];
+let artikli = [monitor, tv, mis];
+artikli = JSON.parse(localStorage.getItem("artikli"));
+
+const sacuvajArtikle = (artikli) => {
+  localStorage.setItem("artikli", JSON.stringify(artikli));
+};
 
 const prikaziDetalje = (artikal) => {
   let info = document.querySelector(".info");
@@ -40,6 +45,7 @@ const dodajNoviArtikal = (artikli) => {
 
       artikli.push(noviArtikal);
       inicijalizujTabelu(artikli);
+      sacuvajArtikle(artikli);
       forma.reset();
       e.stopPropagation();
     }
@@ -48,7 +54,6 @@ const dodajNoviArtikal = (artikli) => {
 
 const inicijalizujTabelu = (artikli) => {
   let tabela = document.querySelector(".table-data");
-
   tabela.innerHTML = "";
 
   for (let i = 0; i < artikli.length; i++) {
@@ -75,3 +80,4 @@ const inicijalizujTabelu = (artikli) => {
 
 inicijalizujTabelu(artikli);
 dodajNoviArtikal(artikli);
+sacuvajArtikle(artikli);
